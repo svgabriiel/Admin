@@ -266,11 +266,12 @@ O sistema foi arquitetado em **módulos independentes** que se comunicam entre s
 O sistema suporta os seguintes cargos com diferentes permissões:
 
 1. **ALUNO** - Discente
-2. **PROFESSOR** - Docente
+2. **PROFESSOR** - Docente (pode criar eventos via `mod_eventos`)
 3. **ADMIN** - Administrador
 4. **VENDEDOR** - Gerencia cantina
 5. **LOCADOR** - Gerencia empréstimos
-6. **BIBLIOTECÁRIO** - Cuida da biblioteca e organiza livros
+
+⚠️ **NOTA:** `mod_eventos` **NÃO é um cargo**. É um **SUB-MÓDULO do PROFESSOR** que todos podem acessar para se inscrever em eventos via `servico_inscricao_evento.cpp`
 
 ---
 
@@ -337,9 +338,12 @@ login_info validar_login(const int* id_usuario, const char* senha) {
 ```cpp
 ADMIN      // Administrador
 ALUNO      // Aluno
-PROFESSOR  // Professor
+PROFESSOR  // Professor (pode acessar mod_eventos para criar eventos)
 VENDEDOR   // Vendedor de lanchonete
 LOCADOR    // Locador de instrumentos
+
+// ❌ EVENTOS NÃO É CARGO - é sub-módulo do professor
+// Todos acessam eventos via servico_inscricao_evento
 ```
 
 ### **Tabela de Configuração Rápida:**
