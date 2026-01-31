@@ -1,7 +1,7 @@
 #ifndef ENTRADA_CADASTRO_H
 #define ENTRADA_CADASTRO_H
 
-// Interface gen√©rica para cadastro de usu√°rios
+// Interface genÈrica para cadastro de usu·rios
 void janela_cadastro();
 
 #endif

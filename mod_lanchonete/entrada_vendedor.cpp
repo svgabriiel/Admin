@@ -1,19 +1,31 @@
 #include <iostream>
+#include <locale.h>
 #include "../headers.h"
+#include "../utilidades.h"
 
 using namespace std;
 
 void janela_vendedor(login_info info) {
     int escolha = -1;
     while (escolha != 0) {
-        cout << "\nGerenciador de Lanchonete\n";
-        cout << "1 - Adicionar Produto\n";
-        cout << "2 - Remover Produto\n";
-        cout << "3 - Visualizar Estoque\n";
-        cout << "4 - Registrar Venda\n";
-        cout << "5 - Visualizar Vendas\n";
-        cout << "0 - Voltar\n";
-        cout << "Escolha uma opÃ§Ã£o: ";
+        limpar_tela();
+        cout << "----------------------------------------\n";
+        cout << "Navegação: Vendedor/\n";
+        cout << "----------------------------------------\n";
+        cout << "\n";
+        cout << "###  GERENCIADOR DE LANCHONETE  #####\n";
+        cout << "########################################\n";
+        cout << "#                                      #\n";
+        cout << "#  1 - Adicionar Produto               #\n";
+        cout << "#  2 - Remover Produto                 #\n";
+        cout << "#  3 - Visualizar Estoque              #\n";
+        cout << "#  4 - Registrar Venda                 #\n";
+        cout << "#  5 - Visualizar Vendas               #\n";
+        cout << "#                                      #\n";
+        cout << "#  0 - Voltar                          #\n";
+        cout << "#                                      #\n";
+        cout << "########################################\n";
+        cout << "Escolha uma opção: ";
         cin >> escolha;
         cin.ignore();
         
@@ -37,7 +49,7 @@ void janela_vendedor(login_info info) {
                 cout << "Voltando ao painel anterior...\n";
                 break;
             default:
-                cout << "OpÃ§Ã£o invÃ¡lida. Tente novamente.\n";
+                cout << "Opção inválida. Tente novamente.\n";
         }
     }
 }

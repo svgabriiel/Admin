@@ -1,4 +1,5 @@
 #include <iostream>
+#include <locale.h>
 
 using namespace std;
 
@@ -11,9 +12,9 @@ void janela_eventos() {
         cout << "3 - Listar Eventos Agendados\n";
         cout << "4 - Visualizar Inscritos em Evento\n";
         cout << "5 - Cancelar Evento\n";
-        cout << "6 - Gerar Relatório de Eventos\n";
+        cout << "6 - Gerar Relat?rio de Eventos\n";
         cout << "0 - Voltar\n";
-        cout << "Escolha uma opção: ";
+        cout << "Escolha uma op??o: ";
         cin >> escolha;
         cin.ignore();
         
@@ -34,13 +35,13 @@ void janela_eventos() {
                 cout << "Cancelando evento...\n";
                 break;
             case 6:
-                cout << "Gerando relatório de eventos...\n";
+                cout << "Gerando relat?rio de eventos...\n";
                 break;
             case 0:
                 cout << "Voltando ao painel anterior...\n";
                 break;
             default:
-                cout << "Opção inválida. Tente novamente.\n";
+                cout << "Op??o inv?lida. Tente novamente.\n";
         }
     }
 }

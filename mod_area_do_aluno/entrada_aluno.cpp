@@ -1,19 +1,31 @@
 #include <iostream>
+#include <locale.h>
 #include "../headers.h"
+#include "../utilidades.h"
 
 using namespace std;
 
 void janela_aluno(login_info info) {
     int escolha = -1;
     while (escolha != 0) {
-        cout << "\nPainel do Aluno\n";
-        cout << "1 - Visualizar Notas\n";
-        cout << "2 - Verificar FrequÃªncia\n";
-        cout << "3 - Visualizar Turmas\n";
-        cout << "4 - Acessar Lanchonete\n";
-        cout << "5 - Visualizar Eventos\n";
-        cout << "0 - Sair\n";
-        cout << "Escolha uma opÃ§Ã£o: ";
+        limpar_tela();
+        cout << "----------------------------------------\n";
+        cout << "Navegação: Aluno/\n";
+        cout << "----------------------------------------\n";
+        cout << "\n";
+        cout << "############  PAINEL DO ALUNO  ########\n";
+        cout << "########################################\n";
+        cout << "#                                      #\n";
+        cout << "#  1 - Visualizar Notas                #\n";
+        cout << "#  2 - Verificar Frequência            #\n";
+        cout << "#  3 - Visualizar Turmas               #\n";
+        cout << "#  4 - Acessar Lanchonete              #\n";
+        cout << "#  5 - Visualizar Eventos              #\n";
+        cout << "#                                      #\n";
+        cout << "#  0 - Sair                            #\n";
+        cout << "#                                      #\n";
+        cout << "########################################\n";
+        cout << "Escolha uma opção: ";
         cin >> escolha;
         cin.ignore();
         
@@ -22,7 +34,7 @@ void janela_aluno(login_info info) {
                 cout << "Visualizando notas...\n";
                 break;
             case 2:
-                cout << "Verificando frequÃªncia...\n";
+                cout << "Verificando frequência...\n";
                 break;
             case 3:
                 cout << "Visualizando turmas...\n";
@@ -37,7 +49,7 @@ void janela_aluno(login_info info) {
                 cout << "Saindo do painel do aluno...\n";
                 break;
             default:
-                cout << "OpÃ§Ã£o invÃ¡lida. Tente novamente.\n";
+                cout << "Opção inválida. Tente novamente.\n";
         }
     }
 }

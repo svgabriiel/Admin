@@ -681,6 +681,109 @@ Antes de implementar:
 
 ---
 
+## 🛠️ Arquivo utilidades.cpp
+
+O arquivo **`utilidades.cpp`** (junto com seu header `utilidades.h`) contém funções utilitárias compartilhadas por todo o projeto.
+
+### Funções Disponíveis:
+
+#### `void limpar_tela()`
+Limpa a tela do console de forma **multiplataforma**:
+- **Windows:** Usa `system("cls")`
+- **Linux/macOS:** Usa `system("clear")`
+
+É utilizado em todas as funções de navegação para criar uma interface limpa entre os menus.
+
+**Exemplo de uso:**
+```cpp
+#include "utilidades.h"
+
+limpar_tela();  // Limpa a tela do console
+```
+#### `const char* enumerado_para_texto(funcao_pessoa f)`
+Converte um valor enumerado de `funcao_pessoa` para sua representa��o em texto.
+
+**Retorna:**
+- `"ALUNO"` - Para alunos
+- `"PROFESSOR"` - Para professores
+- `"ADMIN"` - Para administradores
+- `"VENDEDOR"` - Para vendedores
+- `"LOCADOR"` - Para locadores
+- `"DESCONHECIDO"` - Para valores inv�lidos
+
+**Exemplo de uso:**
+```cpp
+funcao_pessoa cargo = ADMIN;
+cout << "Categoria: " << enumerado_para_texto(cargo) << endl;  // Sa�da: Categoria: ADMIN
+```
+
+#### `void generate_random_cpf(char *cpf_buffer)`
+Gera um **CPF aleat�rio** de 11 d�gitos e o armazena no buffer fornecido.
+
+**Par�metros:**
+- `cpf_buffer` - Ponteiro para um array de char com tamanho m�nimo 12 (11 d�gitos + null terminator)
+
+**Exemplo de uso:**
+```cpp
+char cpf[12];
+generate_random_cpf(cpf);
+cout << "CPF: " << cpf << endl;  // Sa�da: CPF: 12345678901
+```
+
+#### `void generate_random_name(char *name_buffer)`
+Gera um **nome aleat�rio brasileiro** combinando primeiro nome, nome do meio (85% de probabilidade) e sobrenome.
+
+**Caracter�sticas:**
+- Primeiro nome: Escolhido de uma lista de nomes comuns brasileiros e personagens
+- Nome do meio: Palavras que completam o nome com significado (lugares, sentimentos, natureza, etc.)
+  - **85% de probabilidade** de incluir nome do meio
+  - **15% de probabilidade** de ter apenas primeiro nome + sobrenome
+- Sobrenome: Escolhido de uma lista extensa de sobrenomes brasileiros
+
+**Par�metros:**
+- `name_buffer` - Ponteiro para um array de char com tamanho adequado (recomendado m�nimo 256)
+
+**Exemplo de uso:**
+```cpp
+char nome[256];
+generate_random_name(nome);
+cout << "Nome: " << nome << endl;  // Sa�da: Nome: Gabriel da Paz Silva
+```
+---
+
+## 🔤 Configuração de Acentos e Caracteres Especiais
+
+Para que os acentos e caracteres especiais funcionem corretamente, é necessário configurar a codificação em **ISO 8859-1** em ambos os editores:
+
+### VS Code
+Configure no `.vscode/settings.json`:
+```json
+{
+    "files.encoding": "iso88591",
+    "files.autoGuessEncoding": false
+}
+```
+
+### CodeBlocks
+1. **Project → Build options**
+2. **Compiler settings**
+3. Certifique-se de que a codificação está em **ISO 8859-1** (ou Windows-1252)
+
+### Código C++
+Adicione na função `main()`:
+```cpp
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "Portuguese");
+    // ... resto do código
+}
+```
+
+O `setlocale(LC_ALL, "Portuguese")` configura o locale do programa para português, permitindo que o console do Windows exiba corretamente os acentos.
+
+---
+
 **Versão:** 2025.2  
 **Data:** Janeiro 2026  
 **Linguagem:** C++  

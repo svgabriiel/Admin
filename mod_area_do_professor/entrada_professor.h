@@ -6,7 +6,7 @@
 // Exibe a janela do painel do professor
 void janela_professor(login_info info);
 
-// Exibe a janela de gerenciamento de eventos (submÃ³dulo do professor)
+// Exibe a janela de gerenciamento de eventos (submódulo do professor)
 void janela_gerenciar_eventos(login_info info);
 
 #endif

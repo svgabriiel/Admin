@@ -1,43 +1,56 @@
 #include <iostream>
+#include <locale.h>
 #include "../headers.h"
+#include "../utilidades.h"
 
 using namespace std;
 
 void janela_locador(login_info info) {
     int escolha = -1;
     while (escolha != 0) {
-        cout << "\nGerenciador de EmprÃ©stimos de Instrumentos\n";
-        cout << "1 - Registrar EmprÃ©stimo\n";
-        cout << "2 - Registrar DevoluÃ§Ã£o\n";
-        cout << "3 - Visualizar EmprÃ©stimos Ativos\n";
-        cout << "4 - Listar Instrumentos DisponÃ­veis\n";
-        cout << "5 - Gerar RelatÃ³rio de Atrasos\n";
-        cout << "0 - Voltar\n";
-        cout << "Escolha uma opÃ§Ã£o: ";
+        limpar_tela();
+        cout << "----------------------------------------\n";
+        cout << "Navegação: Locador/\n";
+        cout << "----------------------------------------\n";
+        cout << "\n";
+        cout << "#  GERENCIADOR DE EMPRÉSTIMOS  ######\n";
+        cout << "########################################\n";
+        cout << "#                                      #\n";
+        cout << "#  1 - Registrar Empréstimo            #\n";
+        cout << "#  2 - Registrar Devolução             #\n";
+        cout << "#  3 - Visualizar Empréstimos Ativos   #\n";
+        cout << "#  4 - Listar Instrumentos Disponíveis #\n";
+        cout << "#  5 - Gerar Relatório de Atrasos      #\n";
+        cout << "#                                      #\n";
+        cout << "#  0 - Voltar                          #\n";
+        cout << "#                                      #\n";
+        cout << "########################################\n";
+        cout << "\n";
+        cout << "Escolha uma opção: ";
         cin >> escolha;
         cin.ignore();
         
         switch (escolha) {
             case 1:
-                cout << "Registrando emprÃ©stimo...\n";
+                cout << "Registrando empréstimo...\n";
                 break;
             case 2:
-                cout << "Registrando devoluÃ§Ã£o...\n";
+                cout << "Registrando devolução...\n";
                 break;
             case 3:
-                cout << "Visualizando emprÃ©stimos ativos...\n";
+                cout << "Visualizando empréstimos ativos...\n";
                 break;
             case 4:
-                cout << "Listando instrumentos disponÃ­veis...\n";
+                cout << "Listando instrumentos disponíveis...\n";
                 break;
             case 5:
-                cout << "Gerando relatÃ³rio de atrasos...\n";
+                cout << "Gerando relatório de atrasos...\n";
                 break;
             case 0:
                 cout << "Voltando ao painel anterior...\n";
                 break;
             default:
-                cout << "OpÃ§Ã£o invÃ¡lida. Tente novamente.\n";
+                cout << "Opção inválida. Tente novamente.\n";
         }
     }
 }

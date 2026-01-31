@@ -1,5 +1,5 @@
 #include <iostream>
-#include <clocale>
+#include <locale.h>
 #include "headers.h"
 #include "mod_login_e_matricula/servico_login.h"
 #include "mod_adminitrativo/entrada_admin.h"
@@ -8,74 +8,65 @@
 #include "mod_area_do_professor/entrada_professor.h"
 #include "mod_area_do_aluno/entrada_aluno.h"
 #include <cstdlib> // ou stdlib.h
+#include "utilidades.h"
 using namespace std;
-
-void limpar_tela() {
-    #ifdef _WIN32
-        system("cls");   // Windows
-    #else
-        system("clear"); // Linux/macOS
-    #endif
-}
 
 int main() {
 
-    setlocale(LC_ALL, "pt_BR.UTF-8"); //NÃ£o funcina bem
+    setlocale(LC_ALL, "Portuguese_Brazil");
     while (true)
     {
         limpar_tela();
-
-        cout << "Bem-vindo ao Sistema de GestÃ£o Escolar\n";
-        cout << "1 - Fazer Login\n";
-        cout << "0 - Sair\n";
-        cout << "Escolha uma opÃ§Ã£o: ";
+        cout << "----------------------------------------\n";
+        cout << "> INICIO/\n";
+        cout << "----------------------------------------\n";
+        cout << "\n";
+        cout << "#  SISTEMA DE GESTÃO ESCOLAR  #######\n";
+        cout << "########################################\n";
+        cout << "#                                      #\n";
+        cout << "#  Bem-vindo ao Sistema!               #\n";
+        cout << "#                                      #\n";
+        cout << "#  1 - Fazer Login                     #\n";
+        cout << "#  0 - Sair                            #\n";
+        cout << "#                                      #\n";
+        cout << "########################################\n";
+        cout << "\n";
+        cout << "Escolha uma opção: ";
         int escolha;
         cin >> escolha;
         cin.ignore();
 
         if (escolha == 0) {
-            cout << "Saindo do sistema. AtÃ© logo!\n";
+            cout << "Saindo do sistema. Até logo!\n";
             break;
         } else if (escolha == 1) {
-            int id_usuario;
-            char senha[30];
-            cout << "Digite seu ID de usuÃ¡rio: ";
-            cin >> id_usuario;
-            cin.ignore();
-            cout << "Digite sua senha: ";
-            cin.getline(senha, 30);
-            cout << "Fazendo verificaÃ§Ã£o de login...\n";
-            login_info info = validar_login(&id_usuario, senha);
-            cout << "Login bem-sucedido!\n";
-            system("pause");
+            login_info info = janela_login();
+
+            limpar_tela();
+
             switch (info.info_basica.categoria) {
                 case ALUNO:
-                    cout << "Aluno\n";
                     janela_aluno(info);
                     break;
                 case PROFESSOR:
-                    cout << "Professor\n";
                     janela_professor(info);
                     break;
                 case ADMIN:
-                    cout << "Administrador\n";
                     janela_admin(info);
                     break;
                 case VENDEDOR:
-                    cout << "Vendedor\n";
                     janela_vendedor(info);
                     break;
                 case LOCADOR:
-                    cout << "Locador\n";
                     janela_locador(info);
-                    break;  
+                    break;
                 default:
                     cout << "TIPO DE USUARIO DESCONHECIDO\n";
                     break;
             }
         } else {
 
-            cout << "OpÃ§Ã£o invÃ¡lida. Tente novamente.\n";
+            cout << "Opção inválida. Tente novamente.\n";
         }
     }
 

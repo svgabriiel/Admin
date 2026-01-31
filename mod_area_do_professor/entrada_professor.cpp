@@ -1,17 +1,29 @@
 #include <iostream>
+#include <locale.h>
 #include "../headers.h"
+#include "../utilidades.h"
 
 using namespace std;
 
 void janela_gerenciar_eventos(login_info info) {
     int escolha = -1;
     while (escolha != 0) {
-        cout << "\nGerenciamento de Eventos\n";
-        cout << "1 - Criar Novo Evento\n";
-        cout << "2 - Editar Evento\n";
-        cout << "3 - Listar Eventos\n";
-        cout << "0 - Voltar\n";
-        cout << "Escolha uma opÃ§Ã£o: ";
+        limpar_tela();
+        cout << "----------------------------------------\n";
+        cout << "Navegação: Professor/Eventos/\n";
+        cout << "----------------------------------------\n";
+        cout << "\n";
+        cout << "######  GERENCIAMENTO DE EVENTOS  ####\n";
+        cout << "########################################\n";
+        cout << "#                                      #\n";
+        cout << "#  1 - Criar Novo Evento               #\n";
+        cout << "#  2 - Editar Evento                   #\n";
+        cout << "#  3 - Listar Eventos                  #\n";
+        cout << "#                                      #\n";
+        cout << "#  0 - Voltar                          #\n";
+        cout << "#                                      #\n";
+        cout << "########################################\n";
+        cout << "Escolha uma opção: ";
         cin >> escolha;
         cin.ignore();
         
@@ -29,7 +41,7 @@ void janela_gerenciar_eventos(login_info info) {
                 cout << "Voltando ao painel anterior...\n";
                 break;
             default:
-                cout << "OpÃ§Ã£o invÃ¡lida. Tente novamente.\n";
+                cout << "Opção inválida. Tente novamente.\n";
         }
     }
 }
@@ -37,13 +49,23 @@ void janela_gerenciar_eventos(login_info info) {
 void janela_professor(login_info info) {
     int escolha = -1;
     while (escolha != 0) {
-        cout << "\nPainel do Professor\n";
-        cout << "1 - Gerenciar Eventos\n";
-        cout << "2 - LanÃ§ar Notas\n";
-        cout << "3 - Registrar FrequÃªncia\n";
-        cout << "4 - Visualizar Turmas\n";
-        cout << "0 - Sair\n";
-        cout << "Escolha uma opÃ§Ã£o: ";
+        limpar_tela();
+        cout << "----------------------------------------\n";
+        cout << "Navegação: Professor/\n";
+        cout << "----------------------------------------\n";
+        cout << "\n";
+        cout << "########  PAINEL DO PROFESSOR  #######\n";
+        cout << "########################################\n";
+        cout << "#                                      #\n";
+        cout << "#  1 - Gerenciar Eventos               #\n";
+        cout << "#  2 - Lançar Notas                    #\n";
+        cout << "#  3 - Registrar Frequência            #\n";
+        cout << "#  4 - Visualizar Turmas               #\n";
+        cout << "#                                      #\n";
+        cout << "#  0 - Sair                            #\n";
+        cout << "#                                      #\n";
+        cout << "########################################\n";
+        cout << "Escolha uma opção: ";
         cin >> escolha;
         cin.ignore();
         
@@ -52,10 +74,10 @@ void janela_professor(login_info info) {
                 janela_gerenciar_eventos(info);
                 break;
             case 2:
-                cout << "LanÃ§ar notas...\n";
+                cout << "Lançar notas...\n";
                 break;
             case 3:
-                cout << "Registrar frequÃªncia...\n";
+                cout << "Registrar frequência...\n";
                 break;
             case 4:
                 cout << "Visualizar turmas...\n";
@@ -64,7 +86,7 @@ void janela_professor(login_info info) {
                 cout << "Saindo do painel do professor...\n";
                 break;
             default:
-                cout << "OpÃ§Ã£o invÃ¡lida. Tente novamente.\n";
+                cout << "Opção inválida. Tente novamente.\n";
         }
     }
 }
