@@ -469,7 +469,7 @@ O sistema suporta os seguintes cargos com diferentes permissões e acessos:
 | **ADMIN** | Administrador | `mod_adminitrativo` |
 | **VENDEDOR** | Gerencia cantina | `mod_lanchonete` |
 | **LOCADOR** | Gerencia empréstimos | `mod_instrumentos` |
-| **EVENTOS** | Gerencia eventos | `mod_eventos` |
+
 
 ---
 
