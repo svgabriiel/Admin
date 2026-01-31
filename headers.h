@@ -1,3 +1,6 @@
+#ifndef HEADERS_H
+#define HEADERS_H
+
 typedef enum {
     ALUNO,
     PROFESSOR,
@@ -29,6 +32,28 @@ typedef struct {
     // tambem pode ser secretario, diretor.
     // essa atribuição não afeta nada, serve apenas com label informativo
 } Identidade;
+
+
+typedef struct {
+    int id;                       // ID único no sistema
+    int ativo;                    // 1 = Ativo/Matriculado, 0 = Inativo/Deletado
+    char nome[100];               // Nome completo
+    char cpf[20];                 // Apenas números ou formatado
+    funcao_pessoa categoria;        // Categoria da pessoa (Aluno, Professor, etc.)
+    char especialidade[50];       // Ex: "Piano", "Canto", etc. (apenas para professores)
+} login_identidadade;
+
+typedef enum {
+    ID_OU_SENHA_INVALIDO,
+    VALIDO,
+} status_login;
+
+
+typedef struct {
+    status_login status;      // Status do login
+    login_identidadade info_basica; // Informações básicas do login
+    funcao_pessoa chave_acesso;        // Permissões de acesso
+} login_info;
 
 typedef struct
 {
@@ -124,3 +149,5 @@ typedef struct {
     int qtd_vagas_ocupadas;       // quantidade de vagas ocupadas
     int ativo;                    // 1 = Agendado, 0 = Cancelado
 } EventoAgenda;
+
+#endif

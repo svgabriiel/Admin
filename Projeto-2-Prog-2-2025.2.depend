@@ -1,4 +1,81 @@
 # depslib dependency file v1.0
-1584205420 source:d:\projects\projeto-2-prog-2-2025.2\main.cpp
+1769866972 source:d:\projects\projeto-2-prog-2-2025.2\main.cpp
 	<iostream>
+	<clocale>
+	"headers.h"
+	"mod_login_e_matricula/servico_login.h"
+	"mod_adminitrativo/entrada_admin.h"
+	"mod_lanchonete/entrada_vendedor.h"
+	"mod_instrumentos/entrada_locador.h"
+	"mod_area_do_professor/entrada_professor.h"
+	"mod_area_do_aluno/entrada_aluno.h"
+	<cstdlib>
+
+1769794338 source:d:\projects\projeto-2-prog-2-2025.2\mod_adminitrativo\main.cpp
+	<iostream>
+	<fstream>
+
+1769859771 source:d:\projects\projeto-2-prog-2-2025.2\mod_area_do_aluno\main.cpp
+	<iostream>
+
+1769859771 source:d:\projects\projeto-2-prog-2-2025.2\mod_area_do_professor\main.cpp
+	<iostream>
+
+1769864296 source:d:\projects\projeto-2-prog-2-2025.2\mod_login_e_matricula\servico_login.cpp
+	<cstring>
+	"servico_login.h"
+
+1769864722 d:\projects\projeto-2-prog-2-2025.2\headers.h
+
+1769864047 d:\projects\projeto-2-prog-2-2025.2\mod_login_e_matricula\servico_login.h
+	"../headers.h"
+
+1769865380 d:\projects\projeto-2-prog-2-2025.2\mod_adminitrativo\entrada_admin.h
+
+1769866974 source:d:\projects\projeto-2-prog-2-2025.2\mod_adminitrativo\entrada_admin.cpp
+	<iostream>
+	"services.h"
+
+1769864200 d:\projects\projeto-2-prog-2-2025.2\mod_adminitrativo\services.h
+
+1769866172 d:\projects\projeto-2-prog-2-2025.2\mod_login_e_matricula\entrada_login.h
+
+1769866973 d:\projects\projeto-2-prog-2-2025.2\mod_lanchonete\entrada_vendedor.h
+
+1769866973 d:\projects\projeto-2-prog-2-2025.2\mod_instrumentos\entrada_locador.h
+
+1769866186 d:\projects\projeto-2-prog-2-2025.2\mod_area_do_professor\entrada_professor.h
+
+1769866187 d:\projects\projeto-2-prog-2-2025.2\mod_area_do_aluno\entrada_aluno.h
+
+1769866189 source:d:\projects\projeto-2-prog-2-2025.2\mod_adminitrativo\entrada_locador.cpp
+	<iostream>
+
+1769866189 source:d:\projects\projeto-2-prog-2-2025.2\mod_adminitrativo\entrada_vendedor.cpp
+	<iostream>
+
+1769865379 source:d:\projects\projeto-2-prog-2-2025.2\mod_adminitrativo\interface.cpp
+	<iostream>
+	"services.h"
+
+1769864194 source:d:\projects\projeto-2-prog-2-2025.2\mod_adminitrativo\services.cpp
+
+1769866188 source:d:\projects\projeto-2-prog-2-2025.2\mod_area_do_aluno\entrada_aluno.cpp
+	<iostream>
+
+1769866186 source:d:\projects\projeto-2-prog-2-2025.2\mod_area_do_professor\entrada_professor.cpp
+	<iostream>
+
+1769866974 source:d:\projects\projeto-2-prog-2-2025.2\mod_eventos\entrada_eventos.cpp
+	<iostream>
+
+1769866973 source:d:\projects\projeto-2-prog-2-2025.2\mod_instrumentos\entrada_locador.cpp
+	<iostream>
+
+1769866973 source:d:\projects\projeto-2-prog-2-2025.2\mod_lanchonete\entrada_vendedor.cpp
+	<iostream>
+
+1769866938 source:d:\projects\projeto-2-prog-2-2025.2\mod_login_e_matricula\entrada_login.cpp
+	<iostream>
+	"servico_login.h"
 
